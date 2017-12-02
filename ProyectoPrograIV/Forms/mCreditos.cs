@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ProyectoPrograIV
 {
-    public partial class Login : Form
+    public partial class mCreditos : Form
     {
-        public Login()
+        public mCreditos()
         {
             InitializeComponent();
         }
+
+
     }
 }
