@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class Institucion
+    public class Planilla
     {
         #region Declaracion de Constructor 
-        public Institucion() { }
+        public Planilla() { }
         #endregion
 
         #region Declaracion de Variables
@@ -52,24 +52,29 @@ namespace CapaDatos
             }
 
         }
-        public DataTable LeerInstitucion(int pIdCliente)
+        public DataTable LeerPlanilla(int pIdCredito)
         {
             DataTable dtResultado = new DataTable();
             try
             {
                 string vSQL = string.Empty;
 
-                vSQL += "SELECT ";
-                vSQL += "INS.IdLote, ";
-                vSQL += "INS.NombreInstitucion ";
-                vSQL += "FROM dbo.Institucion INS ";
-                vSQL += "INNER JOIN dbo.Cliente CLI ON ";
-                vSQL += "CLI.IdInstitucion = INS.IdInstitucion ";
-                vSQL += "WHERE (CLI.IdCliente = @IdCliente OR 0 = @IdCliente";
+                vSQL += " SELECT IdLote";
+                vSQL += "      , IdCliente";
+                vSQL += "      , FechaCorte";
+                vSQL += "      , IdCredito";
+                vSQL += "      , CuotaCobrada";
+                vSQL += "      , CuotaPaga";
+                vSQL += "      , SaldoPendiente";
+                vSQL += "      , Amortizacion";
+                vSQL += "      , Intereses";
+                vSQL += "      , EstadoPlanilla";
+                vSQL += " FROM dbo.Planilla";
+                vSQL += "WHERE (IdCredito = @IdCredito OR 0 = @IdCredito";
 
                 AbrirConexion();
                 vcmd = new SqlCommand(vSQL, vConnection);
-                vcmd.Parameters.Add("@IdCliente", SqlDbType.Int, 32).Value = pIdCliente;
+                vcmd.Parameters.Add("@IdCliente", SqlDbType.Int, 32).Value = pIdCredito;
                 vAdapter = new SqlDataAdapter(vcmd);
                 vAdapter.Fill(dtResultado);
                 CerrarConexion();
@@ -83,6 +88,4 @@ namespace CapaDatos
         }
         #endregion
     }
-
-
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.Estructura
 {
-    class Planilla
+    public class Planilla
     {
 
         #region Declaracion de atributos

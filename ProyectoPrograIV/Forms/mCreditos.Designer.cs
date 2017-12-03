@@ -32,28 +32,35 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tbpDatos = new System.Windows.Forms.TabPage();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.gboInformacion = new System.Windows.Forms.GroupBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.txtCuota = new System.Windows.Forms.TextBox();
+            this.lblCuota = new System.Windows.Forms.Label();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.btnProyeccion = new System.Windows.Forms.Button();
             this.lblMontoCredito = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
-            this.txtInteres = new System.Windows.Forms.TextBox();
+            this.txtTasa = new System.Windows.Forms.TextBox();
             this.cboEmpresa = new System.Windows.Forms.ComboBox();
             this.txtMontoCredito = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.lblInterés = new System.Windows.Forms.Label();
+            this.lblTasa = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblPlazo = new System.Windows.Forms.Label();
             this.txtPlazo = new System.Windows.Forms.TextBox();
             this.dgvProyeccion = new System.Windows.Forms.DataGridView();
             this.colNumeroCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaCorte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMontoPrincipal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.tbcInformacion.SuspendLayout();
+            this.tbpLista.SuspendLayout();
             this.tbpDatos.SuspendLayout();
             this.gboInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyeccion)).BeginInit();
@@ -70,7 +77,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 565);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 597);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(795, 22);
             this.statusStrip1.TabIndex = 13;
@@ -80,45 +87,79 @@
             // 
             this.tbcInformacion.Controls.Add(this.tbpLista);
             this.tbcInformacion.Controls.Add(this.tbpDatos);
-            this.tbcInformacion.Location = new System.Drawing.Point(12, 67);
+            this.tbcInformacion.Location = new System.Drawing.Point(12, 75);
             this.tbcInformacion.Name = "tbcInformacion";
             this.tbcInformacion.SelectedIndex = 0;
-            this.tbcInformacion.Size = new System.Drawing.Size(771, 492);
+            this.tbcInformacion.Size = new System.Drawing.Size(771, 516);
             this.tbcInformacion.TabIndex = 14;
             // 
             // tbpLista
             // 
+            this.tbpLista.Controls.Add(this.listView1);
             this.tbpLista.Location = new System.Drawing.Point(4, 22);
             this.tbpLista.Name = "tbpLista";
             this.tbpLista.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpLista.Size = new System.Drawing.Size(763, 498);
+            this.tbpLista.Size = new System.Drawing.Size(763, 490);
             this.tbpLista.TabIndex = 0;
             this.tbpLista.Text = "Lista";
             this.tbpLista.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(6, 6);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(751, 398);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // tbpDatos
             // 
+            this.tbpDatos.Controls.Add(this.btnRegresar);
+            this.tbpDatos.Controls.Add(this.btnAceptar);
             this.tbpDatos.Controls.Add(this.gboInformacion);
             this.tbpDatos.Controls.Add(this.dgvProyeccion);
             this.tbpDatos.Location = new System.Drawing.Point(4, 22);
             this.tbpDatos.Name = "tbpDatos";
             this.tbpDatos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDatos.Size = new System.Drawing.Size(763, 466);
+            this.tbpDatos.Size = new System.Drawing.Size(763, 490);
             this.tbpDatos.TabIndex = 1;
             this.tbpDatos.Text = "Datos";
             this.tbpDatos.UseVisualStyleBackColor = true;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(413, 459);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(90, 23);
+            this.btnRegresar.TabIndex = 26;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(317, 459);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(90, 23);
+            this.btnAceptar.TabIndex = 25;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // gboInformacion
             // 
+            this.gboInformacion.Controls.Add(this.txtCuota);
+            this.gboInformacion.Controls.Add(this.lblCuota);
             this.gboInformacion.Controls.Add(this.txtIdCliente);
-            this.gboInformacion.Controls.Add(this.btnCalcular);
+            this.gboInformacion.Controls.Add(this.btnProyeccion);
             this.gboInformacion.Controls.Add(this.lblMontoCredito);
             this.gboInformacion.Controls.Add(this.lblEmpresa);
-            this.gboInformacion.Controls.Add(this.txtInteres);
+            this.gboInformacion.Controls.Add(this.txtTasa);
             this.gboInformacion.Controls.Add(this.cboEmpresa);
             this.gboInformacion.Controls.Add(this.txtMontoCredito);
             this.gboInformacion.Controls.Add(this.txtCliente);
-            this.gboInformacion.Controls.Add(this.lblInterés);
+            this.gboInformacion.Controls.Add(this.lblTasa);
             this.gboInformacion.Controls.Add(this.lblCliente);
             this.gboInformacion.Controls.Add(this.lblPlazo);
             this.gboInformacion.Controls.Add(this.txtPlazo);
@@ -128,16 +169,40 @@
             this.gboInformacion.TabIndex = 24;
             this.gboInformacion.TabStop = false;
             // 
-            // btnCalcular
+            // txtCuota
             // 
-            this.btnCalcular.Image = global::ProyectoPrograIV.Properties.Resources.configuracion_simbolo_de_interfaz_de_dos_ruedas_dentadas;
-            this.btnCalcular.Location = new System.Drawing.Point(660, 75);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
-            this.btnCalcular.TabIndex = 13;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.txtCuota.Location = new System.Drawing.Point(506, 71);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.Size = new System.Drawing.Size(99, 20);
+            this.txtCuota.TabIndex = 16;
+            // 
+            // lblCuota
+            // 
+            this.lblCuota.AutoSize = true;
+            this.lblCuota.Location = new System.Drawing.Point(424, 74);
+            this.lblCuota.Name = "lblCuota";
+            this.lblCuota.Size = new System.Drawing.Size(38, 13);
+            this.lblCuota.TabIndex = 15;
+            this.lblCuota.Text = "Cuota:";
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Location = new System.Drawing.Point(81, 19);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(35, 20);
+            this.txtIdCliente.TabIndex = 14;
+            this.txtIdCliente.Leave += new System.EventHandler(this.txtIdCliente_Leave);
+            // 
+            // btnProyeccion
+            // 
+            this.btnProyeccion.Image = global::ProyectoPrograIV.Properties.Resources.configuracion_simbolo_de_interfaz_de_dos_ruedas_dentadas;
+            this.btnProyeccion.Location = new System.Drawing.Point(611, 71);
+            this.btnProyeccion.Name = "btnProyeccion";
+            this.btnProyeccion.Size = new System.Drawing.Size(124, 23);
+            this.btnProyeccion.TabIndex = 13;
+            this.btnProyeccion.Text = "Hacer Proyección";
+            this.btnProyeccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProyeccion.UseVisualStyleBackColor = true;
             // 
             // lblMontoCredito
             // 
@@ -157,12 +222,12 @@
             this.lblEmpresa.TabIndex = 5;
             this.lblEmpresa.Text = "Empresa:";
             // 
-            // txtInteres
+            // txtTasa
             // 
-            this.txtInteres.Location = new System.Drawing.Point(81, 72);
-            this.txtInteres.Name = "txtInteres";
-            this.txtInteres.Size = new System.Drawing.Size(258, 20);
-            this.txtInteres.TabIndex = 11;
+            this.txtTasa.Location = new System.Drawing.Point(81, 72);
+            this.txtTasa.Name = "txtTasa";
+            this.txtTasa.Size = new System.Drawing.Size(258, 20);
+            this.txtTasa.TabIndex = 11;
             // 
             // cboEmpresa
             // 
@@ -187,14 +252,14 @@
             this.txtCliente.Size = new System.Drawing.Size(220, 20);
             this.txtCliente.TabIndex = 3;
             // 
-            // lblInterés
+            // lblTasa
             // 
-            this.lblInterés.AutoSize = true;
-            this.lblInterés.Location = new System.Drawing.Point(24, 75);
-            this.lblInterés.Name = "lblInterés";
-            this.lblInterés.Size = new System.Drawing.Size(39, 13);
-            this.lblInterés.TabIndex = 10;
-            this.lblInterés.Text = "Interés";
+            this.lblTasa.AutoSize = true;
+            this.lblTasa.Location = new System.Drawing.Point(24, 75);
+            this.lblTasa.Name = "lblTasa";
+            this.lblTasa.Size = new System.Drawing.Size(34, 13);
+            this.lblTasa.TabIndex = 10;
+            this.lblTasa.Text = "Tasa:";
             // 
             // lblCliente
             // 
@@ -226,6 +291,7 @@
             this.dgvProyeccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProyeccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNumeroCuota,
+            this.colFechaCorte,
             this.colMontoPrincipal,
             this.colCuota,
             this.colInteres,
@@ -243,7 +309,15 @@
             this.colNumeroCuota.HeaderText = "Número Cuota";
             this.colNumeroCuota.Name = "colNumeroCuota";
             this.colNumeroCuota.ReadOnly = true;
-            this.colNumeroCuota.Width = 123;
+            this.colNumeroCuota.Width = 105;
+            // 
+            // colFechaCorte
+            // 
+            this.colFechaCorte.DataPropertyName = "FechaCorte";
+            this.colFechaCorte.HeaderText = "FechaCorte";
+            this.colFechaCorte.Name = "colFechaCorte";
+            this.colFechaCorte.ReadOnly = true;
+            this.colFechaCorte.Width = 105;
             // 
             // colMontoPrincipal
             // 
@@ -251,54 +325,53 @@
             this.colMontoPrincipal.HeaderText = "Monto Principal";
             this.colMontoPrincipal.Name = "colMontoPrincipal";
             this.colMontoPrincipal.ReadOnly = true;
-            this.colMontoPrincipal.Width = 123;
+            this.colMontoPrincipal.Width = 105;
             // 
             // colCuota
             // 
+            this.colCuota.DataPropertyName = "Cuota";
             this.colCuota.HeaderText = "Cuota";
             this.colCuota.Name = "colCuota";
             this.colCuota.ReadOnly = true;
-            this.colCuota.Width = 123;
+            this.colCuota.Width = 105;
             // 
             // colInteres
             // 
+            this.colInteres.DataPropertyName = "Interes";
             this.colInteres.HeaderText = "Interés";
             this.colInteres.Name = "colInteres";
             this.colInteres.ReadOnly = true;
-            this.colInteres.Width = 123;
+            this.colInteres.Width = 105;
             // 
             // colPago
             // 
+            this.colPago.DataPropertyName = "Pago";
             this.colPago.HeaderText = "Pago";
             this.colPago.Name = "colPago";
             this.colPago.ReadOnly = true;
-            this.colPago.Width = 123;
+            this.colPago.Width = 105;
             // 
             // colSaldo
             // 
+            this.colSaldo.DataPropertyName = "Saldo";
             this.colSaldo.HeaderText = "Saldo";
             this.colSaldo.Name = "colSaldo";
             this.colSaldo.ReadOnly = true;
-            this.colSaldo.Width = 123;
-            // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Location = new System.Drawing.Point(81, 19);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(35, 20);
-            this.txtIdCliente.TabIndex = 14;
+            this.colSaldo.Width = 108;
             // 
             // mCreditos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 587);
+            this.ClientSize = new System.Drawing.Size(795, 619);
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Name = "mCreditos";
-            this.Text = "Form1";
+            this.Text = "Créditos";
+            this.Load += new System.EventHandler(this.mCreditos_Load);
             this.tbcInformacion.ResumeLayout(false);
+            this.tbpLista.ResumeLayout(false);
             this.tbpDatos.ResumeLayout(false);
             this.gboInformacion.ResumeLayout(false);
             this.gboInformacion.PerformLayout();
@@ -315,25 +388,31 @@
         private System.Windows.Forms.TabPage tbpLista;
         private System.Windows.Forms.TabPage tbpDatos;
         private System.Windows.Forms.GroupBox gboInformacion;
-        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnProyeccion;
         private System.Windows.Forms.Label lblMontoCredito;
         private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.TextBox txtInteres;
+        private System.Windows.Forms.TextBox txtTasa;
         private System.Windows.Forms.ComboBox cboEmpresa;
         private System.Windows.Forms.TextBox txtMontoCredito;
         private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Label lblInterés;
+        private System.Windows.Forms.Label lblTasa;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblPlazo;
         private System.Windows.Forms.TextBox txtPlazo;
         private System.Windows.Forms.DataGridView dgvProyeccion;
+        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.TextBox txtCuota;
+        private System.Windows.Forms.Label lblCuota;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumeroCuota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaCorte;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMontoPrincipal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCuota;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInteres;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaldo;
-        private System.Windows.Forms.TextBox txtIdCliente;
     }
 }
 

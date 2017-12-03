@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad.Estructura
 {
-    class Credito
+    public class Credito
     {
 
         #region Declaracion de atributos
@@ -14,8 +14,10 @@ namespace CapaEntidad.Estructura
         private int vIdCredito;
         private int vIdCliente;
         private decimal vMontoAprobado;
-        private int vTasa;
+        private decimal vTasa;
         private decimal vSaldo;
+        private decimal vCuota;
+        private int vPlazo;
         private string vUltimaProyeccion;
 
         #endregion
@@ -65,7 +67,7 @@ namespace CapaEntidad.Estructura
             }
         }
 
-        public int Tasa
+        public decimal Tasa
         {
             get
             {
@@ -89,6 +91,30 @@ namespace CapaEntidad.Estructura
             }
         }
 
+        public decimal Cuota
+        {
+            get
+            {
+                return vCuota;
+            }
+            set
+            {
+                vCuota = value;
+            }
+        }
+
+        public int Plazo
+        {
+            get
+            {
+                return vPlazo;
+            }
+            set
+            {
+                vPlazo = value;
+            }
+        }
+
         public string UltimaProyeccion
         {
             get
@@ -103,8 +129,6 @@ namespace CapaEntidad.Estructura
 
 
         #endregion
-
-
 
     }
 }

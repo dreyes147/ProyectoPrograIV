@@ -7,32 +7,29 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-    public class Institucion
+    public class Planilla
     {
+
         #region Declaracion de Constructor 
-        public Institucion() { }
+        public Planilla() { }
         #endregion
-        
+
         #region Declaracion de Metodos
 
-
-        public DataTable LeerInstitucion(int pIdCliente)
+        public DataTable LeerPlanilla (int pIdPlanilla)
         {
             DataTable dtResultado = new DataTable();
-            CapaDatos.Institucion vNegocio = new CapaDatos.Institucion();
+            CapaDatos.Planilla vDatos = new CapaDatos.Planilla();
             try
             {
-                dtResultado = vNegocio.LeerInstitucion(pIdCliente);
-
+                dtResultado = vDatos.LeerPlanilla(pIdPlanilla);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
-
             return dtResultado;
         }
-
         #endregion
     }
 }

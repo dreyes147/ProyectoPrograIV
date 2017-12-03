@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Estructura\Credito.cs" />
     <Compile Include="Estructura\Planilla.cs" />
+    <Compile Include="Estructura\Proyeccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
