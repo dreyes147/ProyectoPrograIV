@@ -19,6 +19,7 @@ namespace CapaDatos
 
 
 
+
         private void AbrirConexion()
         {
             string vInstancia = string.Empty;

@@ -210,5 +210,10 @@ namespace ProyectoPrograIV.Forms
             System.IO.File.WriteAllText(dialog.FileName, content);
             MessageBox.Show(@"Text file was created.");
         }
+
+        private void txtBuscarC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

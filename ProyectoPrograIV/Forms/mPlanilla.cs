@@ -4,7 +4,8 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-//using Excel = Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 
 namespace ProyectoPrograIV.Forms
@@ -67,7 +68,7 @@ namespace ProyectoPrograIV.Forms
             if (cmbTipoFile.Text == "TXT")
             {
                 SaveFileDialog dialog = new SaveFileDialog();
-                dialog.Filter = "Text File|*.xml";
+                dialog.Filter = "Text File|*.txt";
                 var result = dialog.ShowDialog();
                 if (result != DialogResult.OK)
                     return;
@@ -118,11 +119,56 @@ namespace ProyectoPrograIV.Forms
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            CapaEntidad.clsCargarPlantilla CargarDTG = new CapaEntidad.clsCargarPlantilla();
-            DataTable dtBD = new DataTable();
 
-            dtBD = CargarDTG.CargarPlantilla();
-            dtgPlanilla.DataSource = dtBD;
+
+            if (txtBuscarP.Text == "")
+            {
+                MessageBox.Show("Por favor digite el número de identificación que desea buscar");
+            }
+            else
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtBuscarP.Text, "[^0-9]"))
+                {
+                    MessageBox.Show("Por favor digite solamente números");
+                    txtBuscarP.Text = txtBuscarP.Text.Remove(txtBuscarP.Text.Length - 1);
+                }
+                else
+                {
+
+                    CapaEntidad.clsBuscarCliente CargarCMB = new CapaEntidad.clsBuscarCliente();
+                    DataTable dtCMB = new DataTable();
+
+                    dtCMB = CargarCMB.SeleccionarCliente(int.Parse(txtBuscarP.Text));
+                    //IdCliente = int.Parse(txtBuscarC.Text);
+                    // lblNombre.ValueMember = "NombreC";
+
+
+                    if (dtCMB != null)
+                    {
+                        if (dtCMB.Rows.Count > 0)
+                        {
+                            lblNombre.Text = dtCMB.Rows[0]["NombreC"].ToString();
+                            CapaEntidad.clsCargarPlantilla CargarDTG = new CapaEntidad.clsCargarPlantilla();
+                            DataTable dtBD = new DataTable();
+
+                            dtBD = CargarDTG.CargarPlantilla(int.Parse(txtBuscarP.Text));
+                            dtgPlanilla.DataSource = dtBD;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor digite una idenficación válida");
+                        }
+                    }
+
+
+
+                }
+
+
+
+                }
+
+               
         }
     }
     }

@@ -33,7 +33,8 @@
             this.dtgPlanilla = new System.Windows.Forms.DataGridView();
             this.lblInstruccion = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtBuscarP = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPlanilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             // 
             // dtgPlanilla
             // 
+            this.dtgPlanilla.AllowUserToAddRows = false;
             this.dtgPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPlanilla.Location = new System.Drawing.Point(86, 92);
             this.dtgPlanilla.Name = "dtgPlanilla";
@@ -86,26 +88,34 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // comboBox1
+            // txtBuscarP
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(209, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.txtBuscarP.Location = new System.Drawing.Point(117, 36);
+            this.txtBuscarP.Name = "txtBuscarP";
+            this.txtBuscarP.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscarP.TabIndex = 5;
             // 
-            // Planilla
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(246, 76);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.TabIndex = 6;
+            // 
+            // mPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 328);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtBuscarP);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lblInstruccion);
             this.Controls.Add(this.dtgPlanilla);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.cmbTipoFile);
-            this.Name = "Planilla";
+            this.Name = "mPlanilla";
             this.Text = "Planilla";
             this.Load += new System.EventHandler(this.Planilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPlanilla)).EndInit();
@@ -121,6 +131,7 @@
         private System.Windows.Forms.DataGridView dtgPlanilla;
         private System.Windows.Forms.Label lblInstruccion;
         private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtBuscarP;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

@@ -13,6 +13,7 @@ namespace CapaEntidad
         {
             CapaDatos.clsGuardarEstructura GuardarDGV = new CapaDatos.clsGuardarEstructura();
              GuardarDGV.InsertarEstructura(pData,pID);
+
         }
     }
 }

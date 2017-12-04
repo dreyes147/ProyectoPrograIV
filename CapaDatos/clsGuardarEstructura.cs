@@ -15,6 +15,7 @@ namespace CapaDatos
         SqlConnection vConnection;
         SqlCommand vcmd;
        // SqlDataReader vReader;
+
         SqlDataAdapter vAdapter;
 
 

@@ -9,11 +9,13 @@ namespace CapaEntidad
 {
     public class clsCargarPlantilla
     {
-        public DataTable CargarPlantilla()
+        public DataTable CargarPlantilla(int a)
         {
             CapaDatos.clsCargarPlantilla SeleccionarCliente = new CapaDatos.clsCargarPlantilla();
-            return SeleccionarCliente.CargarPlantilla();
+            return SeleccionarCliente.CargarPlantilla(a);
         }
+
+
 
        
     }

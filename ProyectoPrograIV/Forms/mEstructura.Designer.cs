@@ -151,6 +151,7 @@
             this.txtBuscarC.Name = "txtBuscarC";
             this.txtBuscarC.Size = new System.Drawing.Size(78, 20);
             this.txtBuscarC.TabIndex = 8;
+            this.txtBuscarC.TextChanged += new System.EventHandler(this.txtBuscarC_TextChanged);
             // 
             // label1
             // 

@@ -13,6 +13,7 @@ namespace CapaEntidad
         {
             CapaDatos.clsEstructura CargarDGV = new CapaDatos.clsEstructura();
             return CargarDGV.CargarPlanilla();
+
         }
     }
 }

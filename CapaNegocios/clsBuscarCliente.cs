@@ -13,6 +13,7 @@ namespace CapaEntidad
         {
             CapaDatos.clsBuscarCliente SeleccionarCliente = new CapaDatos.clsBuscarCliente();
             return SeleccionarCliente.SeleccionarCliente(ID);
+
         }
 
        

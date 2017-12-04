@@ -50,56 +50,56 @@ namespace CapaDatos
         }
 
 
-        public string CargarRegistro()
+        public static class Globals
         {
-            var myString = "";
-            string vSQL = string.Empty;
-           
-            try
-            {
-
-                vSQL += "SELECT t1.IdCliente, ( SELECT Campo+ ', '  FROM Estructura t2 WHERE t1.idcliente = t2.IdCliente ORDER BY t1.idCliente FOR XML PATH('') ) AS Dias FROM Estructura t1 GROUP BY t1.idcliente";
-                vcmd = new SqlCommand(vSQL, vConnection);
-           
-                AbrirConexion();
-
-
-                using (SqlDataReader dr = vcmd.ExecuteReader())
-                {
-                    if (dr.Read())
-                    {
-                        return dr.GetString(0);
-                    }
-                    else
-                    {
-                        return ""; // some value to indicate a missing record
-                                   // or throw an exception
-                    }
-                    return myString;
-
-                }
-
-            CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-
-
-            }
+            public const Int32 ID = 2; 
 
         }
 
-
-        public System.Data.DataTable CargarPlantilla()
+        public String CargarRegistro(int a)
         {
             DataTable dtResultado = new DataTable("Datos");
 
             string vSQL = string.Empty;
             try
             {
-                vSQL += "SELECT '"+CargarRegistro()+"' from Planilla";
-                //vSQL += "SELECT IdLote, IdCliente, FechaCorte, IdCredito, CuotaCobrada, CuotaPaga, SaldoPendiente, Amortizacion, Intereses, EstadoPlanilla from Planilla where FechaCorte = @pFecha";
+                vSQL += "SELECT(SELECT Campo + ', '  FROM Estructura t2 WHERE t1.IdCliente =" + a + " AND t2.IdCliente = " + a + " ORDER BY t1.idCliente FOR XML PATH('')) AS Cadena FROM Estructura t1 WHERE t1.IdCliente = " + a + " GROUP BY t1.idcliente";
+                // vSQL += "SELECT IdLote, IdCliente, FechaCorte, IdCredito, CuotaCobrada, CuotaPaga, SaldoPendiente, Amortizacion, Intereses, EstadoPlanilla from Planilla ";
+                AbrirConexion();
+                vcmd = new SqlCommand(vSQL, vConnection);
+                // vcmd.Parameters.Add("@Identificacion", SqlDbType.DateTime).Value = pFecha;
+                vAdapter = new SqlDataAdapter(vcmd);
+                vAdapter.Fill(dtResultado);
+                CerrarConexion();
+                var stringArr = dtResultado.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+                return stringArr[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+
+            }
+
+        }
+
+        public int EnviarID(int id)
+        {
+             
+            return id;
+        }
+
+
+        public System.Data.DataTable CargarPlantilla(int a)
+        {
+            DataTable dtResultado = new DataTable("Datos");
+
+            string vSQL = string.Empty;
+            try
+            {
+                //vSQL += "SELECT (select left('" + CargarRegistro() + "', len('" + CargarRegistro() + "')-1)) from Planilla";
+
+                vSQL += "SELECT  " + CargarRegistro(a) + " IdLote from Planilla Where IdCliente = "+a+"";
+               // vSQL += "SELECT IdLote, IdCliente, FechaCorte, IdCredito, CuotaCobrada, CuotaPaga, SaldoPendiente, Amortizacion, Intereses, EstadoPlanilla from Planilla ";
                 AbrirConexion();
                 vcmd = new SqlCommand(vSQL, vConnection);
                // vcmd.Parameters.Add("@Identificacion", SqlDbType.DateTime).Value = pFecha;
