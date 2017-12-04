@@ -160,6 +160,8 @@ namespace CapaDatos
             {
                 string vSQL = string.Empty;
 
+                vSQL += "DELETE FROM dbo.Planilla ";
+                vSQL += "WHERE  IdCredito = @IdCredito ";
                 vSQL += "DELETE FROM dbo.Credito ";
                 vSQL += "WHERE  IdCredito = @IdCredito ";
 

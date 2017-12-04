@@ -16,13 +16,13 @@ namespace CapaNegocios
 
         #region Declaracion de Metodos
 
-        public DataTable LeerPlanilla (int pIdPlanilla)
+        public DataTable LeerPlanilla (int pIdCredito)
         {
             DataTable dtResultado = new DataTable();
             CapaDatos.Planilla vDatos = new CapaDatos.Planilla();
             try
             {
-                dtResultado = vDatos.LeerPlanilla(pIdPlanilla);
+                dtResultado = vDatos.LeerPlanilla(pIdCredito);
             }
             catch (Exception ex)
             {
