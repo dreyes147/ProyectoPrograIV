@@ -52,6 +52,12 @@
     <Compile Include="Forms\mCliente.Designer.cs">
       <DependentUpon>mCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\mEstructura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mEstructura.Designer.cs">
+      <DependentUpon>mEstructura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\mInstitucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     <Compile Include="Forms\mCreditos.Designer.cs">
       <DependentUpon>mCreditos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\mPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mPlanilla.Designer.cs">
+      <DependentUpon>mPlanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\mCliente.resx">
@@ -72,8 +84,14 @@
     <EmbeddedResource Include="Forms\mCreditos.resx">
       <DependentUpon>mCreditos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mEstructura.resx">
+      <DependentUpon>mEstructura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\mInstitucion.resx">
       <DependentUpon>mInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mPlanilla.resx">
+      <DependentUpon>mPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

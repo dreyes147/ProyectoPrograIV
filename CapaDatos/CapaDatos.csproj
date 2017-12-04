@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="clsBuscarCliente.cs" />
+    <Compile Include="clsCargarPlantilla.cs" />
+    <Compile Include="clsEstructura.cs" />
+    <Compile Include="clsGuardarEstructura.cs" />
     <Compile Include="Credito.cs" />
     <Compile Include="Institucion.cs" />
     <Compile Include="Planilla.cs" />
