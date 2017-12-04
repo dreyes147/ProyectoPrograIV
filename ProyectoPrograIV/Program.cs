@@ -16,7 +16,7 @@ namespace ProyectoPrograIV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.mAplicacionPagos());
+            Application.Run(new mCreditos());
         }
     }
 }

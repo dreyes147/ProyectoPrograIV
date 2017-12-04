@@ -70,12 +70,12 @@ namespace CapaDatos
                 vSQL += "      , Amortizacion";
                 vSQL += "      , Intereses";
                 vSQL += "      , EstadoPlanilla";
-                vSQL += " FROM dbo.Planilla";
-                vSQL += "WHERE (IdCredito = @IdCredito OR 0 = @IdCredito";
+                vSQL += " FROM dbo.Planilla ";
+                vSQL += "WHERE (IdCredito = @IdCredito OR 0 = @IdCredito)";
 
                 AbrirConexion();
                 vcmd = new SqlCommand(vSQL, vConnection);
-                vcmd.Parameters.Add("@IdCliente", SqlDbType.Int, 32).Value = pIdCredito;
+                vcmd.Parameters.Add("@IdCredito", SqlDbType.Int, 32).Value = pIdCredito;
                 vAdapter = new SqlDataAdapter(vcmd);
                 vAdapter.Fill(dtResultado);
                 CerrarConexion();

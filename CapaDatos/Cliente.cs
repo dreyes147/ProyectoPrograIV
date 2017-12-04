@@ -65,7 +65,7 @@ namespace CapaDatos
                 vSQL += "SELECT ";
                 vSQL += "IdCliente, ";
                 vSQL += "Nombre +' '+ Apellido1 + ' ' + Apellido2 AS Nombre ";
-                vSQL += "FROM dbo.Cliente";
+                vSQL += "FROM dbo.Cliente ";
                 vSQL += "where IdCliente = @IdCliente";
 
                 AbrirConexion();

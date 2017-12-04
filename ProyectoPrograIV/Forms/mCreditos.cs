@@ -89,7 +89,8 @@ namespace ProyectoPrograIV
                         Tasa = Convert.ToDecimal(txtTasa.Text),
                         MontoAprobado = Convert.ToDecimal(txtMontoCredito.Text),
                         Plazo = Convert.ToInt32(txtPlazo.Text),
-                        Saldo = Convert.ToDecimal(txtMontoCredito.Text)
+                        Saldo = Convert.ToDecimal(txtMontoCredito.Text),
+                        UltimaProyeccion="N"
                     };
                     switch (vModo)
                     {
@@ -269,7 +270,11 @@ namespace ProyectoPrograIV
                             if (vModo == "C")
                             {
                                 vSaldo = Math.Round(vSaldoAnterior - vProyeccion.Interes, 2);
-                                vProyeccion.Saldo = vSaldo2;
+                                if(vSaldo2 != 0)
+                                {
+                                    vProyeccion.Saldo = vSaldo2;
+                                }
+                               
                                 vSaldoAnterior = Math.Round(vSaldo, 2);
                             }
                         }
@@ -295,7 +300,7 @@ namespace ProyectoPrograIV
                 txtMontoCredito.Text = string.Empty;
                 txtPlazo.Text = string.Empty;
                 txtCuota.Text = string.Empty;
-                dgvProyeccion.Rows.Clear();
+                dgvProyeccion.DataSource=null;
             }
             catch (Exception ex)
             {
@@ -369,7 +374,7 @@ namespace ProyectoPrograIV
                     };
 
                     vIdCredito = vCreditoSeleccionado.IdCredito;
-                    txtCliente.Text = vCreditoSeleccionado.IdCliente.ToString();
+                    txtIdCliente.Text = vCreditoSeleccionado.IdCliente.ToString();
                     txtTasa.Text = vCreditoSeleccionado.Tasa.ToString();
                     txtMontoCredito.Text = vCreditoSeleccionado.MontoAprobado.ToString();
                     txtPlazo.Text = vCreditoSeleccionado.Plazo.ToString();
