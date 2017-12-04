@@ -226,7 +226,6 @@ namespace ProyectoPrograIV.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
@@ -243,7 +242,6 @@ namespace ProyectoPrograIV.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
@@ -261,7 +259,6 @@ namespace ProyectoPrograIV.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
