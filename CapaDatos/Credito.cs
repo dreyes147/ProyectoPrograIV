@@ -92,7 +92,7 @@ namespace CapaDatos
             {
                 string vSQL = string.Empty;
                 vSQL += "DECLARE @Id INT ";
-                vSQL += "SELECT ISNULL(MAX(IdCredito),0) + 1 FROM dbo.Credito ";
+                vSQL += "SELECT @Id = ISNULL(MAX(IdCredito),0) + 1 FROM dbo.Credito ";
                 vSQL += "INSERT INTO dbo.Credito (IdCredito,IdCliente,MontoAprobado,Tasa,Saldo,Cuota,Plazo,UltimaProyeccion) ";
                 vSQL += "VALUES(@Id, @IdCliente, @MontoAprobado, @Tasa, @Saldo, @Cuota, @Plazo, @UltimaProyeccion ) ";
                 

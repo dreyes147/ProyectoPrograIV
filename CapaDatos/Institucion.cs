@@ -60,12 +60,13 @@ namespace CapaDatos
                 string vSQL = string.Empty;
 
                 vSQL += "SELECT ";
+                vSQL += "INS.IdInstitucion, ";
                 vSQL += "INS.IdLote, ";
                 vSQL += "INS.NombreInstitucion ";
                 vSQL += "FROM dbo.Institucion INS ";
                 vSQL += "INNER JOIN dbo.Cliente CLI ON ";
                 vSQL += "CLI.IdInstitucion = INS.IdInstitucion ";
-                vSQL += "WHERE (CLI.IdCliente = @IdCliente OR 0 = @IdCliente";
+                vSQL += "WHERE (CLI.IdCliente = @IdCliente OR 0 = @IdCliente)";
 
                 AbrirConexion();
                 vcmd = new SqlCommand(vSQL, vConnection);
@@ -80,6 +81,105 @@ namespace CapaDatos
             }
 
             return dtResultado;
+        }
+
+        public DataTable Select()
+        {
+            DataTable dtResultado = new DataTable();
+            try
+            {
+                string vSQL = string.Empty;
+
+                vSQL += "SELECT ";
+                vSQL += "INS.IdInstitucion, ";
+                vSQL += "INS.IdLote, ";
+                vSQL += "INS.NombreInstitucion ";
+                vSQL += "FROM dbo.Institucion INS ";
+
+                AbrirConexion();
+                vcmd = new SqlCommand(vSQL, vConnection);
+                vAdapter = new SqlDataAdapter(vcmd);
+                vAdapter.Fill(dtResultado);
+                CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return dtResultado;
+        }
+
+        public void Insert(CapaEntidad.Estructura.Institucion pDatos)
+        {
+            try
+            {
+                string vSQL = string.Empty;
+                vSQL += "DECLARE @Id INT ";
+                vSQL += "SELECT @Id = ISNULL(MAX(IdInstitucion),0) + 1 FROM dbo.Institucion ";
+
+                vSQL += " INSERT INTO dbo.Institucion(IdInstitucion, NombreInstitucion, IdLote) ";
+                vSQL += " VALUES(@Id, @NombreInstitucion, @IdLote)";
+
+                AbrirConexion();
+                vcmd = new SqlCommand(vSQL, vConnection);
+                vcmd.Parameters.Add("@NombreInstitucion", SqlDbType.VarChar).Value = pDatos.NombreInstitucion;
+                vcmd.Parameters.Add("@IdLote", SqlDbType.Int).Value = pDatos.IdLote;
+                vcmd.ExecuteNonQuery();
+                CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public void Update(CapaEntidad.Estructura.Institucion pDatos)
+        {
+            try
+            {
+                string vSQL = string.Empty;
+
+                vSQL += " UPDATE dbo.Institucion ";
+                vSQL += "   SET ";
+                vSQL += "      NombreInstitucion = @NombreInstitucion";
+                vSQL += "      ,IdLote = @IdLote";
+                vSQL += "  WHERE IdInstitucion = @IdInstitucion ";
+
+                AbrirConexion();
+                vcmd = new SqlCommand(vSQL, vConnection);
+                vcmd.Parameters.Add("@IdInstitucion", SqlDbType.Int).Value = pDatos.IdInstitucion;
+                vcmd.Parameters.Add("@NombreInstitucion", SqlDbType.VarChar).Value = pDatos.NombreInstitucion;
+                vcmd.Parameters.Add("@IdLote", SqlDbType.Int).Value = pDatos.IdLote;
+                vcmd.ExecuteNonQuery();
+                CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public void Delete(CapaEntidad.Estructura.Institucion pDatos)
+        {
+            DataTable dtResultado = new DataTable();
+            try
+            {
+                string vSQL = string.Empty;
+
+                vSQL += "DELETE FROM dbo.Institucion  ";
+                vSQL += " WHERE IdInstitucion = @IdInstitucion ";
+
+                AbrirConexion();
+                vcmd = new SqlCommand(vSQL, vConnection);
+                vcmd.Parameters.Add("@IdInstitucion", SqlDbType.Int, 32).Value = pDatos.IdInstitucion;
+                vcmd.ExecuteNonQuery();
+                CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
         #endregion
     }

@@ -29,14 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.ltvCreditos = new System.Windows.Forms.ListView();
+            this.colIdCredito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColMontoAprobado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTasa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSaldoCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCuotaCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colPlazoCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colUltimaProyeccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpDatos = new System.Windows.Forms.TabPage();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gboInformacion = new System.Windows.Forms.GroupBox();
+            this.btnCalcularCuota = new System.Windows.Forms.Button();
             this.txtCuota = new System.Windows.Forms.TextBox();
             this.lblCuota = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
@@ -59,19 +72,6 @@
             this.colInteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdCredito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIdCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColMontoAprobado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTasa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSaldoCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCuotaCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPlazoCre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUltimaProyeccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnCalcularCuota = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
@@ -89,6 +89,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(795, 61);
             this.panel1.TabIndex = 1;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(3, 21);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(278, 24);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Mantenimiento de Créditos...";
             // 
             // statusStrip1
             // 
@@ -122,6 +133,36 @@
             this.tbpLista.Text = "Lista";
             this.tbpLista.UseVisualStyleBackColor = true;
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(431, 430);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 4;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(350, 430);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(269, 430);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // ltvCreditos
             // 
             this.ltvCreditos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -141,6 +182,44 @@
             this.ltvCreditos.TabIndex = 0;
             this.ltvCreditos.UseCompatibleStateImageBehavior = false;
             this.ltvCreditos.View = System.Windows.Forms.View.Details;
+            // 
+            // colIdCredito
+            // 
+            this.colIdCredito.Text = "Crédito";
+            this.colIdCredito.Width = 99;
+            // 
+            // colIdCliente
+            // 
+            this.colIdCliente.Text = "Id Cliente";
+            this.colIdCliente.Width = 97;
+            // 
+            // ColMontoAprobado
+            // 
+            this.ColMontoAprobado.Text = "Monto Aprobado";
+            this.ColMontoAprobado.Width = 127;
+            // 
+            // colTasa
+            // 
+            this.colTasa.Text = "Tasa";
+            // 
+            // colSaldoCre
+            // 
+            this.colSaldoCre.Text = "Saldo";
+            this.colSaldoCre.Width = 92;
+            // 
+            // colCuotaCre
+            // 
+            this.colCuotaCre.Text = "Cuota";
+            // 
+            // colPlazoCre
+            // 
+            this.colPlazoCre.Text = "Plazo";
+            this.colPlazoCre.Width = 98;
+            // 
+            // colUltimaProyeccion
+            // 
+            this.colUltimaProyeccion.Text = "Ultima Proyección";
+            this.colUltimaProyeccion.Width = 114;
             // 
             // tbpDatos
             // 
@@ -200,6 +279,17 @@
             this.gboInformacion.Size = new System.Drawing.Size(741, 128);
             this.gboInformacion.TabIndex = 24;
             this.gboInformacion.TabStop = false;
+            // 
+            // btnCalcularCuota
+            // 
+            this.btnCalcularCuota.Location = new System.Drawing.Point(643, 71);
+            this.btnCalcularCuota.Name = "btnCalcularCuota";
+            this.btnCalcularCuota.Size = new System.Drawing.Size(92, 20);
+            this.btnCalcularCuota.TabIndex = 17;
+            this.btnCalcularCuota.Text = "Calcular Cuota";
+            this.btnCalcularCuota.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalcularCuota.UseVisualStyleBackColor = true;
+            this.btnCalcularCuota.Click += new System.EventHandler(this.btnCalcularCuota_Click);
             // 
             // txtCuota
             // 
@@ -392,96 +482,6 @@
             this.colSaldo.Name = "colSaldo";
             this.colSaldo.ReadOnly = true;
             this.colSaldo.Width = 108;
-            // 
-            // colIdCredito
-            // 
-            this.colIdCredito.Text = "Crédito";
-            this.colIdCredito.Width = 99;
-            // 
-            // colIdCliente
-            // 
-            this.colIdCliente.Text = "Id Cliente";
-            this.colIdCliente.Width = 97;
-            // 
-            // ColMontoAprobado
-            // 
-            this.ColMontoAprobado.Text = "Monto Aprobado";
-            this.ColMontoAprobado.Width = 127;
-            // 
-            // colTasa
-            // 
-            this.colTasa.Text = "Tasa";
-            // 
-            // colSaldoCre
-            // 
-            this.colSaldoCre.Text = "Saldo";
-            this.colSaldoCre.Width = 92;
-            // 
-            // colCuotaCre
-            // 
-            this.colCuotaCre.Text = "Cuota";
-            // 
-            // colPlazoCre
-            // 
-            this.colPlazoCre.Text = "Plazo";
-            this.colPlazoCre.Width = 98;
-            // 
-            // colUltimaProyeccion
-            // 
-            this.colUltimaProyeccion.Text = "Ultima Proyección";
-            this.colUltimaProyeccion.Width = 114;
-            // 
-            // btnCalcularCuota
-            // 
-            this.btnCalcularCuota.Location = new System.Drawing.Point(643, 71);
-            this.btnCalcularCuota.Name = "btnCalcularCuota";
-            this.btnCalcularCuota.Size = new System.Drawing.Size(92, 20);
-            this.btnCalcularCuota.TabIndex = 17;
-            this.btnCalcularCuota.Text = "Calcular Cuota";
-            this.btnCalcularCuota.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalcularCuota.UseVisualStyleBackColor = true;
-            this.btnCalcularCuota.Click += new System.EventHandler(this.btnCalcularCuota_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(3, 21);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(278, 24);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Mantenimiento de Créditos...";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(269, 430);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 1;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(350, 430);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(431, 430);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 4;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // mCreditos
             // 

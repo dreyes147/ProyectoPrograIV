@@ -171,7 +171,8 @@ namespace ProyectoPrograIV
             try
             {
                 dtCreditos = vNeciosCredito.Select();
-                if(dtCreditos.Rows.Count > 0)
+                ltvCreditos.Items.Clear();
+                if (dtCreditos.Rows.Count > 0)
                 {
                     foreach (DataRow vRow in dtCreditos.Rows)
                     {
@@ -416,6 +417,7 @@ namespace ProyectoPrograIV
             {
                 Aceptar();
                 LimpiarCampos();
+                MessageBox.Show("El proceso a finalizado correctamente", "Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -454,6 +456,7 @@ namespace ProyectoPrograIV
         {
             try
             {
+                CargarListaCreditos();
                 LimpiarCampos();
                 tbpLista.Parent = tbcInformacion;
                 tbcInformacion.SelectTab(tbpLista);
@@ -479,7 +482,7 @@ namespace ProyectoPrograIV
             catch (Exception ex)
             {
 
-                throw new Exception(ex.Message, ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -487,7 +490,7 @@ namespace ProyectoPrograIV
         {
             try
             {
-                vModo = "E";
+                vModo = "B";
                 tbpDatos.Parent = tbcInformacion;
                 DeshabilitarControles();
                 CargarControles();
@@ -497,7 +500,7 @@ namespace ProyectoPrograIV
             catch (Exception ex)
             {
 
-                throw new Exception(ex.Message, ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -515,7 +518,7 @@ namespace ProyectoPrograIV
             catch (Exception ex)
             {
 
-                throw new Exception(ex.Message, ex);
+                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

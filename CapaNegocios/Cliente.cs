@@ -31,6 +31,63 @@ namespace CapaNegocios
             return dtResultado;
         }
 
+        public DataTable Select()
+        {
+            DataTable dtResultado = new DataTable();
+            CapaDatos.Cliente vDatos = new CapaDatos.Cliente();
+            try
+            {
+                dtResultado = vDatos.Select();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return dtResultado;
+        }
+
+        public void Update(CapaEntidad.Estructura.Cliente pDatos)
+        {
+            CapaDatos.Cliente vDatos = new CapaDatos.Cliente();
+            try
+            {
+               vDatos.Update(pDatos);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+
+        public void Insert(CapaEntidad.Estructura.Cliente pDatos)
+        {
+            CapaDatos.Cliente vDatos = new CapaDatos.Cliente();
+            try
+            {
+                vDatos.Insert(pDatos);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+
+        public void Delete(CapaEntidad.Estructura.Cliente pDatos)
+        {
+            CapaDatos.Cliente vDatos = new CapaDatos.Cliente();
+            try
+            {
+                vDatos.Delete(pDatos);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
         #endregion
     }
 }
