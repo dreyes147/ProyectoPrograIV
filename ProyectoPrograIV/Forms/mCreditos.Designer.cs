@@ -492,6 +492,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Name = "mCreditos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Créditos";
             this.Load += new System.EventHandler(this.mCreditos_Load);
             this.panel1.ResumeLayout(false);

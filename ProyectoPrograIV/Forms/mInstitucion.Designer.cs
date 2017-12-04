@@ -38,17 +38,17 @@
             this.colNombreInstitucion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colIdLote = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpDatos = new System.Windows.Forms.TabPage();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.txtLote = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblLote = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblIdInstitucion = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblIdInstitucion = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblLote = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtLote = new System.Windows.Forms.TextBox();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
             this.tbpDatos.SuspendLayout();
@@ -157,6 +157,78 @@
             this.tbpDatos.Text = "Datos";
             this.tbpDatos.UseVisualStyleBackColor = true;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(243, 141);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(90, 23);
+            this.btnRegresar.TabIndex = 28;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(147, 141);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(90, 23);
+            this.btnAceptar.TabIndex = 27;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // txtLote
+            // 
+            this.txtLote.Location = new System.Drawing.Point(93, 74);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(144, 20);
+            this.txtLote.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(93, 48);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(357, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // lblLote
+            // 
+            this.lblLote.AutoSize = true;
+            this.lblLote.Location = new System.Drawing.Point(29, 77);
+            this.lblLote.Name = "lblLote";
+            this.lblLote.Size = new System.Drawing.Size(28, 13);
+            this.lblLote.TabIndex = 3;
+            this.lblLote.Text = "Lote";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(29, 51);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 2;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(90, 28);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(13, 13);
+            this.lblId.TabIndex = 1;
+            this.lblId.Text = "0";
+            // 
+            // lblIdInstitucion
+            // 
+            this.lblIdInstitucion.AutoSize = true;
+            this.lblIdInstitucion.Location = new System.Drawing.Point(29, 28);
+            this.lblIdInstitucion.Name = "lblIdInstitucion";
+            this.lblIdInstitucion.Size = new System.Drawing.Size(55, 13);
+            this.lblIdInstitucion.TabIndex = 0;
+            this.lblIdInstitucion.Text = "Institución";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 521);
@@ -186,78 +258,6 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Mantenimiento de Instituciones...";
             // 
-            // lblIdInstitucion
-            // 
-            this.lblIdInstitucion.AutoSize = true;
-            this.lblIdInstitucion.Location = new System.Drawing.Point(29, 28);
-            this.lblIdInstitucion.Name = "lblIdInstitucion";
-            this.lblIdInstitucion.Size = new System.Drawing.Size(55, 13);
-            this.lblIdInstitucion.TabIndex = 0;
-            this.lblIdInstitucion.Text = "Institución";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(90, 28);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(13, 13);
-            this.lblId.TabIndex = 1;
-            this.lblId.Text = "0";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(29, 51);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblLote
-            // 
-            this.lblLote.AutoSize = true;
-            this.lblLote.Location = new System.Drawing.Point(29, 77);
-            this.lblLote.Name = "lblLote";
-            this.lblLote.Size = new System.Drawing.Size(28, 13);
-            this.lblLote.TabIndex = 3;
-            this.lblLote.Text = "Lote";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(93, 48);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(357, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtLote
-            // 
-            this.txtLote.Location = new System.Drawing.Point(93, 74);
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(144, 20);
-            this.txtLote.TabIndex = 5;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(243, 141);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(90, 23);
-            this.btnRegresar.TabIndex = 28;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(147, 141);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(90, 23);
-            this.btnAceptar.TabIndex = 27;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // mInstitucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +267,7 @@
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.statusStrip1);
             this.Name = "mInstitucion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Institución";
             this.Load += new System.EventHandler(this.mInstitucion_Load);
             this.tbcInformacion.ResumeLayout(false);

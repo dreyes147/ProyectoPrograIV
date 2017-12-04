@@ -134,6 +134,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "mAplicacionPagos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicación Pagos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

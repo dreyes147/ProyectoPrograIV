@@ -40,8 +40,12 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBuscarC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstructura)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbEstruc
@@ -103,7 +107,7 @@
             // 
             // btnBuscarC
             // 
-            this.btnBuscarC.Location = new System.Drawing.Point(118, 47);
+            this.btnBuscarC.Location = new System.Drawing.Point(118, 105);
             this.btnBuscarC.Name = "btnBuscarC";
             this.btnBuscarC.Size = new System.Drawing.Size(92, 23);
             this.btnBuscarC.TabIndex = 5;
@@ -120,7 +124,7 @@
             this.groupBox1.Controls.Add(this.btnSeleccionar);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(25, 87);
+            this.groupBox1.Location = new System.Drawing.Point(25, 145);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(444, 269);
             this.groupBox1.TabIndex = 6;
@@ -139,7 +143,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(216, 52);
+            this.lblNombre.Location = new System.Drawing.Point(216, 110);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(167, 13);
             this.lblNombre.TabIndex = 7;
@@ -147,7 +151,7 @@
             // 
             // txtBuscarC
             // 
-            this.txtBuscarC.Location = new System.Drawing.Point(34, 49);
+            this.txtBuscarC.Location = new System.Drawing.Point(34, 107);
             this.txtBuscarC.Name = "txtBuscarC";
             this.txtBuscarC.Size = new System.Drawing.Size(78, 20);
             this.txtBuscarC.TabIndex = 8;
@@ -156,28 +160,62 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 20);
+            this.label1.Location = new System.Drawing.Point(21, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Digite el número idenficación del cliente que desea buscar:";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 433);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(495, 22);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(119)))), ((int)(((byte)(119)))));
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(495, 61);
+            this.panel1.TabIndex = 14;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(3, 21);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(372, 24);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Mantenimiento de Estructura Archivo...";
+            // 
             // mEstructura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 381);
+            this.ClientSize = new System.Drawing.Size(495, 455);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscarC);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBuscarC);
             this.Name = "mEstructura";
-            this.Text = "Seleccione los campos en el orden que desea:";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Estructura de Archivo";
             this.Load += new System.EventHandler(this.mEstructura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstructura)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +235,8 @@
         private System.Windows.Forms.Label lblInstruccion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Campos;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

@@ -61,6 +61,12 @@
     <Compile Include="Forms\mCliente.Designer.cs">
       <DependentUpon>mCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\mEstructura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\mCreditos.resx">
       <DependentUpon>mCreditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\mEstructura.resx">
       <DependentUpon>mEstructura.cs</DependentUpon>

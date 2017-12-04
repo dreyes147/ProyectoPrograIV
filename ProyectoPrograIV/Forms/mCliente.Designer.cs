@@ -39,7 +39,13 @@
             this.colIdCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colApellido1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colApellido2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdInstitucion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpDatos = new System.Windows.Forms.TabPage();
+            this.cboInstitucion = new System.Windows.Forms.ComboBox();
+            this.lblInstitucion = new System.Windows.Forms.Label();
+            this.txtApellido2 = new System.Windows.Forms.TextBox();
+            this.lblApellido2 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
@@ -49,12 +55,6 @@
             this.lblId = new System.Windows.Forms.Label();
             this.lblIdInstitucion = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.colApellido2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIdInstitucion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtApellido2 = new System.Windows.Forms.TextBox();
-            this.lblApellido2 = new System.Windows.Forms.Label();
-            this.lblInstitucion = new System.Windows.Forms.Label();
-            this.cboInstitucion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
@@ -168,6 +168,15 @@
             this.colApellido1.Text = "Apellido 1";
             this.colApellido1.Width = 107;
             // 
+            // colApellido2
+            // 
+            this.colApellido2.Text = "Apellido 2";
+            this.colApellido2.Width = 119;
+            // 
+            // colIdInstitucion
+            // 
+            this.colIdInstitucion.Text = "Institución";
+            // 
             // tbpDatos
             // 
             this.tbpDatos.Controls.Add(this.cboInstitucion);
@@ -189,6 +198,39 @@
             this.tbpDatos.TabIndex = 1;
             this.tbpDatos.Text = "Datos";
             this.tbpDatos.UseVisualStyleBackColor = true;
+            // 
+            // cboInstitucion
+            // 
+            this.cboInstitucion.FormattingEnabled = true;
+            this.cboInstitucion.Location = new System.Drawing.Point(93, 126);
+            this.cboInstitucion.Name = "cboInstitucion";
+            this.cboInstitucion.Size = new System.Drawing.Size(357, 21);
+            this.cboInstitucion.TabIndex = 32;
+            // 
+            // lblInstitucion
+            // 
+            this.lblInstitucion.AutoSize = true;
+            this.lblInstitucion.Location = new System.Drawing.Point(29, 129);
+            this.lblInstitucion.Name = "lblInstitucion";
+            this.lblInstitucion.Size = new System.Drawing.Size(55, 13);
+            this.lblInstitucion.TabIndex = 31;
+            this.lblInstitucion.Text = "Institucion";
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.Location = new System.Drawing.Point(93, 100);
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.Size = new System.Drawing.Size(357, 20);
+            this.txtApellido2.TabIndex = 30;
+            // 
+            // lblApellido2
+            // 
+            this.lblApellido2.AutoSize = true;
+            this.lblApellido2.Location = new System.Drawing.Point(29, 103);
+            this.lblApellido2.Name = "lblApellido2";
+            this.lblApellido2.Size = new System.Drawing.Size(53, 13);
+            this.lblApellido2.TabIndex = 29;
+            this.lblApellido2.Text = "Apellido 2";
             // 
             // btnRegresar
             // 
@@ -270,48 +312,6 @@
             this.statusStrip1.TabIndex = 19;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // colApellido2
-            // 
-            this.colApellido2.Text = "Apellido 2";
-            this.colApellido2.Width = 119;
-            // 
-            // colIdInstitucion
-            // 
-            this.colIdInstitucion.Text = "Institución";
-            // 
-            // txtApellido2
-            // 
-            this.txtApellido2.Location = new System.Drawing.Point(93, 100);
-            this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.Size = new System.Drawing.Size(357, 20);
-            this.txtApellido2.TabIndex = 30;
-            // 
-            // lblApellido2
-            // 
-            this.lblApellido2.AutoSize = true;
-            this.lblApellido2.Location = new System.Drawing.Point(29, 103);
-            this.lblApellido2.Name = "lblApellido2";
-            this.lblApellido2.Size = new System.Drawing.Size(53, 13);
-            this.lblApellido2.TabIndex = 29;
-            this.lblApellido2.Text = "Apellido 2";
-            // 
-            // lblInstitucion
-            // 
-            this.lblInstitucion.AutoSize = true;
-            this.lblInstitucion.Location = new System.Drawing.Point(29, 129);
-            this.lblInstitucion.Name = "lblInstitucion";
-            this.lblInstitucion.Size = new System.Drawing.Size(55, 13);
-            this.lblInstitucion.TabIndex = 31;
-            this.lblInstitucion.Text = "Institucion";
-            // 
-            // cboInstitucion
-            // 
-            this.cboInstitucion.FormattingEnabled = true;
-            this.cboInstitucion.Location = new System.Drawing.Point(93, 126);
-            this.cboInstitucion.Name = "cboInstitucion";
-            this.cboInstitucion.Size = new System.Drawing.Size(357, 21);
-            this.cboInstitucion.TabIndex = 32;
-            // 
             // mCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +321,7 @@
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.statusStrip1);
             this.Name = "mCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.mCliente_Load);
             this.panel1.ResumeLayout(false);
